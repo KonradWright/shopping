@@ -55,6 +55,9 @@ describe Cart do
       before do
         @cart.discounts << Discount.new(name:"Bread 10% off!", item_id: 1, disc_percent:0.1)
       end
+      it 'has a total of 180' do
+        expect(@cart.total).to eq 180
+      end
     end
   end
 end
