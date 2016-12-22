@@ -40,4 +40,10 @@ describe Cart do
       end
     end
   end
+  context 'has two items' do
+    before do
+      @cart.items << Item.new(1,100,name:"Bread")
+      @cart.items << Item.new(1,100,name:"Bread")
+    end
+  end
 end
