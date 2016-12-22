@@ -25,7 +25,10 @@ describe Cart do
     end
     context 'that has a discount of 10% off' do
       before do
-        @cart.discounts << Discount.new(name:"Bread 10% off!", disc_item_id: 1, disc_percent:0.1)
+        @cart.discounts << Discount.new(name:"Bread 10% off!", item_id: 1, disc_percent:0.1)
+      end
+      it 'has a total of 90' do
+        expect(@cart.total).to eq 90
       end
     end
   end
