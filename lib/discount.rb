@@ -1,11 +1,12 @@
 class Discount
   
-  attr_reader :name, :disc_item_id, :disc_percent, :disc_requirements
+  attr_reader :name, :item_id, :disc_percent, :requirements
   
   def initialize(options = {})
     @name = options[:name] || "(discount not named)"
+    @item_id = options[:item_id] || 0
     @disc_percent = options[:disc_percent] || 0
-    @disc_requirements = options[:disc_requirements] || []
+    @requirements = options[:requirements] || []
   end
   
   def to_s
