@@ -45,5 +45,11 @@ describe Cart do
       @cart.items << Item.new(1,100,name:"Bread")
       @cart.items << Item.new(1,100,name:"Bread")
     end
+    it 'has two items' do
+      expect(@cart.items.count).to eq 2
+    end
+    it 'has a totoal of 200' do
+      expect(@cart.total).to eq 200
+    end
   end
 end
