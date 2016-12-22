@@ -23,5 +23,10 @@ describe Cart do
     it 'has a total of 100' do
       expect(@cart.total).to eq 100
     end
+    context 'that has a discount of 10% off' do
+      before do
+        @cart.discounts << Discount.new(name:"Bread 10% off!", disc_item_id: 1, disc_percent:0.1)
+      end
+    end
   end
 end
