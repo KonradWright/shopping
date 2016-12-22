@@ -17,5 +17,11 @@ describe Cart do
     before do
       @cart.items << Item.new(1,100,name:"Bread")
     end
+    it 'has one item' do
+      expect(@cart.items.count).to eq 1
+    end
+    it 'has a total of 100' do
+      expect(@cart.total).to eq 100
+    end
   end
 end
