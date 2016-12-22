@@ -13,4 +13,9 @@ describe Cart do
   it 'has a total of 0' do
     expect(@cart.total).to eq 0
   end
+  context 'has one item' do
+    before do
+      @cart.items << Item.new(1,100,name:"Bread")
+    end
+  end
 end
