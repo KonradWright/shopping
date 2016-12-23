@@ -59,5 +59,10 @@ describe Cart do
         expect(@cart.total).to eq 180
       end
     end
+    context 'that have a buy 1 get 1 free discount' do
+      before do
+        @cart.discounts << Discount.new(name:"Buy 1 Bread get 1 Bread FREE!", item_id: 1, disc_percent: 1, requirements:[1])
+      end
+    end
   end
 end
