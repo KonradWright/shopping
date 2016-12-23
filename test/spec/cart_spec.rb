@@ -48,7 +48,7 @@ describe Cart do
     it 'has two items' do
       expect(@cart.items.count).to eq 2
     end
-    it 'has a totoal of 200' do
+    it 'has a total of 200' do
       expect(@cart.total).to eq 200
     end
     context 'that are 10% off' do
@@ -62,6 +62,9 @@ describe Cart do
     context 'that have a buy 1 get 1 free discount' do
       before do
         @cart.discounts << Discount.new(name:"Buy 1 Bread get 1 Bread FREE!", item_id: 1, disc_percent: 1, requirements:[1])
+      end
+      it 'has a total of 100' do
+        expect(@cart.total).to eq 100
       end
     end
   end
